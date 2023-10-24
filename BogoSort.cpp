@@ -29,8 +29,16 @@ void quickSort(std::vector<int>& arr, int low, int high) {
 }
 
 int main() {
-    // Generate random data
-    std::vector<int> data = {5, 2, 9, 1, 5, 6};
+    // Generate random data and populate the vector
+    int n = 6; // Adjust the size as needed
+    std::random_device rd;
+    std::mt19937 generator(rd());
+    std::uniform_int_distribution<int> distribution(1, 100); // Adjust the range as needed
+    std::vector<int> data;
+
+    for (int i = 0; i < n; ++i) {
+        data.push_back(distribution(generator));
+    }
 
     std::cout << "Unsorted array: ";
     for (int num : data) {
@@ -38,7 +46,6 @@ int main() {
     }
     std::cout << std::endl;
 
-    int n = data.size();
     quickSort(data, 0, n - 1);
 
     std::cout << "Sorted array: ";
@@ -49,4 +56,3 @@ int main() {
 
     return 0;
 }
-
