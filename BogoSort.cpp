@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm> // Include the standard library for sorting
 #include <random>
 
 // Function to partition the array for Quicksort
@@ -28,6 +29,7 @@ void quickSort(std::vector<int>& arr, int low, int high) {
 }
 
 int main() {
+    // Generate random data
     std::vector<int> data = {5, 2, 9, 1, 5, 6};
 
     std::cout << "Unsorted array: ";
@@ -47,3 +49,4 @@ int main() {
 
     return 0;
 }
+
